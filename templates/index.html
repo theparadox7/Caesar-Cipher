@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caesar Cipher Decryption Tool</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Caesar Cipher Decryption Tool</h1>
+        <form method="POST">
+            <div class="input-group">
+                <label for="ciphertext">Ciphertext:</label>
+                <input type="text" id="ciphertext" name="ciphertext" value="{{ ciphertext }}" required>
+            </div>
+            <div class="input-group">
+                <label for="shift">Shift Value:</label>
+                <input type="number" id="shift" name="shift" value="{{ shift }}" min="0" max="25" required>
+            </div>
+            <button type="submit">Decrypt</button>
+        </form>
+
+        {% if decrypted_message %}
+        <div class="result">
+            <h2>Decrypted Message:</h2>
+            <p>{{ decrypted_message }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
