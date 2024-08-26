@@ -5,22 +5,5 @@
 {% block heading %}Caesar Cipher Decryption Tool{% endblock %}
 
 {% block content %}
-<form method="POST">
-    <div class="input-group">
-        <label for="ciphertext">Ciphertext:</label>
-        <input type="text" id="ciphertext" name="ciphertext" value="{{ ciphertext }}" required>
-    </div>
-    <div class="input-group">
-        <label for="shift">Shift Value:</label>
-        <input type="number" id="shift" name="shift" value="{{ shift }}" min="0" max="25" required>
-    </div>
-    <button type="submit">Decrypt</button>
-</form>
-
-{% if decrypted_message %}
-<div class="result">
-    <h2>Decrypted Message:</h2>
-    <p>{{ decrypted_message }}</p>
-</div>
-{% endif %}
+<p>This tool allows you to decrypt messages encrypted using the Caesar Cipher method. Adjust the shift value to see how the ciphertext changes.</p>
 {% endblock %}
