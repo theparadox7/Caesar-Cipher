@@ -3,30 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Caesar Cipher Decryption Tool</title>
+    <title>{% block title %}Cryptography Tool{% endblock %}</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class="container">
-        <h1>Caesar Cipher Decryption Tool</h1>
-        <form method="POST">
-            <div class="input-group">
-                <label for="ciphertext">Ciphertext:</label>
-                <input type="text" id="ciphertext" name="ciphertext" value="{{ ciphertext }}" required>
-            </div>
-            <div class="input-group">
-                <label for="shift">Shift Value:</label>
-                <input type="number" id="shift" name="shift" value="{{ shift }}" min="0" max="25" required>
-            </div>
-            <button type="submit">Decrypt</button>
-        </form>
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('index') }}">Caesar Cipher</a></li>
+            <li><a href="{{ url_for('substitution_cipher') }}">Substitution Cipher</a></li>
+            <li><a href="{{ url_for('rsa') }}">RSA</a></li>
+            <li><a href="{{ url_for('md5') }}">MD5</a></li>
+            <li><a href="{{ url_for('sha') }}">SHA</a></li>
+        </ul>
+    </nav>
 
-        {% if decrypted_message %}
-        <div class="result">
-            <h2>Decrypted Message:</h2>
-            <p>{{ decrypted_message }}</p>
-        </div>
-        {% endif %}
+    <div class="container">
+        <h1>{% block heading %}Cryptography Tool{% endblock %}</h1>
+        {% block content %}{% endblock %}
     </div>
 </body>
 </html>

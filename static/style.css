@@ -20,6 +20,40 @@ h1 {
     color: white;
 }
 
+nav {
+    background-color: #007bff;
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    display: block;
+    padding: 14px 20px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #03346E;
+}
+
 .input-group {
     margin-bottom: 20px;
 }
@@ -68,4 +102,3 @@ button:hover {
     font-size: 18px;
     color: salmon;
 }
- 
