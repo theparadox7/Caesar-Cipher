@@ -3,8 +3,16 @@ from flask import Flask, render_template, request
 app = Flask(__name__)
 
 def caesar_decrypt(ciphertext, shift):
-    # Caesar Cipher Decryption Logic
-    ...
+    plaintext = ""
+    for char in ciphertext:
+        if char.isalpha():
+            offset = 65 if char.isupper() else 97
+            decrypted_char = chr((ord(char) - offset - shift) % 26 + offset)
+            plaintext += decrypted_char
+        else:
+            plaintext += char
+    return plaintext
+
 
 @app.route("/", methods=["GET", "POST"])
 def index():
