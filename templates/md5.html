@@ -1,7 +1,22 @@
-{%extends "base.html"%}
-{%block title %} MD5 Decription Tool{%endblock%}
-{% block heading %}MD5 Decription Tool{% endblock %}
+{% extends "base.html" %}
 
-{%block content%}
-<p>AAAAAAAAAA</p>
-{%endblock%}
+{% block title %}MD5 Hashing Tool{% endblock %}
+
+{% block content %}
+<h1>MD5 Hashing Tool</h1>
+
+<form method="POST">
+    <div class="input-group">
+        <label for="plaintext">Plaintext:</label>
+        <input type="text" id="plaintext" name="plaintext" value="{{ plaintext }}" required>
+    </div>
+    <button type="submit">Generate MD5 Hash</button>
+</form>
+
+{% if hashed_message %}
+<div class="result">
+    <h2>MD5 Hash:</h2>
+    <p>{{ hashed_message }}</p>
+</div>
+{% endif %}
+{% endblock %}

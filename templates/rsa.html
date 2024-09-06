@@ -1,3 +1,33 @@
-{%extends "base.html"%}
-{%block title %} RSA Decryption Tool {%endblock%}
-{% block heading %}RSA Decryption Tool{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}RSA Encryption/Decryption Tool{% endblock %}
+
+{% block content %}
+<h1>RSA Encryption/Decryption Tool</h1>
+
+<form method="POST">
+    <div class="input-group">
+        <label for="key">Key (Private PEM Format):</label>
+        <textarea id="key" name="key" rows="5" required>{{ key }}</textarea>
+    </div>
+    <div class="input-group">
+        <label for="plaintext">Plaintext:</label>
+        <input type="text" id="plaintext" name="plaintext" value="{{ plaintext }}" required>
+    </div>
+    <div class="input-group">
+        <label for="action">Action:</label>
+        <select id="action" name="action" required>
+            <option value="Encrypt">Encrypt</option>
+            <option value="Decrypt">Decrypt</option>
+        </select>
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+{% if result_message %}
+<div class="result">
+    <h2>Result:</h2>
+    <p>{{ result_message }}</p>
+</div>
+{% endif %}
+{% endblock %}

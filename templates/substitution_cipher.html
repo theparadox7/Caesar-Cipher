@@ -1,3 +1,26 @@
-{%extends "base.html"%}
-{%block title %} Substitution Cipher Tool {%endblock%}
-{% block heading %}Substitution Cipher Tool{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}Substitution Cipher Tool{% endblock %}
+
+{% block content %}
+<h1>Substitution Cipher Tool</h1>
+
+<form method="POST">
+    <div class="input-group">
+        <label for="ciphertext">Ciphertext:</label>
+        <input type="text" id="ciphertext" name="ciphertext" value="{{ ciphertext }}" required>
+    </div>
+    <div class="input-group">
+        <label for="key">Key (Substitution Alphabet):</label>
+        <input type="text" id="key" name="key" value="{{ key }}" required>
+    </div>
+    <button type="submit">Decrypt</button>
+</form>
+
+{% if decrypted_message %}
+<div class="result">
+    <h2>Decrypted Message:</h2>
+    <p>{{ decrypted_message }}</p>
+</div>
+{% endif %}
+{% endblock %}

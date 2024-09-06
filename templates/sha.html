@@ -1,3 +1,22 @@
-{%extends "base.html"%}
-{%block title %} SHA Decryption Tool {%endblock%}
-{% block heading %}SHA Decryption Tool{% endblock %}
+{% extends "base.html" %}
+
+{% block title %}SHA Hashing Tool{% endblock %}
+
+{% block content %}
+<h1>SHA Hashing Tool</h1>
+
+<form method="POST">
+    <div class="input-group">
+        <label for="plaintext">Plaintext:</label>
+        <input type="text" id="plaintext" name="plaintext" value="{{ plaintext }}" required>
+    </div>
+    <button type="submit">Generate SHA Hash</button>
+</form>
+
+{% if hashed_message %}
+<div class="result">
+    <h2>SHA Hash:</h2>
+    <p>{{ hashed_message }}</p>
+</div>
+{% endif %}
+{% endblock %}
