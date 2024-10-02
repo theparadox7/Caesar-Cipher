@@ -8,11 +8,11 @@
 <form method="POST">
     <div class="input-group">
         <label for="key">Key (Private PEM Format):</label>
-        <textarea id="key" name="key" rows="5" required>{{ key }}</textarea>
+        <textarea id="key" name="key" rows="5" required></textarea>
     </div>
     <div class="input-group">
-        <label for="plaintext">Plaintext:</label>
-        <input type="text" id="plaintext" name="plaintext" value="{{ plaintext }}" required>
+        <label for="message">Message:</label>
+        <input type="text" id="message" name="message" required>
     </div>
     <div class="input-group">
         <label for="action">Action:</label>
